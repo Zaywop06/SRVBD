@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:," />
+
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet" />
+    <!-- MDB -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.3.2/mdb.min.css"
+      rel="stylesheet" />
+
+    <title>Acceso a base de datos | Usiel Colin Pérez</title>
+
+    <script type="module" src="lib/js/consumeJson.js"></script>
+    <script type="module" src="lib/js/muestraObjeto.js"></script>
+    <script type="module" src="lib/js/muestraError.js"></script>
+
+  </head>
+
+  <body class="bg-light" onload="consumeJson('srv/categorias.php')
+   .then(respuesta => muestraObjeto(document, respuesta.body))
+   .catch(muestraError)">
+
+    <div class="d-flex align-items-center justify-content-center text-center">
+      <h1 class="text-black fw-bold my-4">Acceso a base de datos | Usiel Colin Pérez</h1>
+    </div>
+
+    <div class="container-fluid">
+      <div class="d-flex align-items-center justify-content-center">
+        <div class="card text-bg-white mb-3" style="max-width: 30rem;">
+          <div class="card-header">
+            <a class="btn bg-info text-white fw-bold" data-mdb-ripple-init
+              href="agrega.html" role="button">
+              Agregar
+            </a>
+          </div>
+          <div class="card-body">
+            <dl id="lista" style="text-align: justify;">
+              <dt><progress max="100">Cargando&hellip;</progress></dt>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MDB -->
+    <script type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.3.2/mdb.umd.min.js"></script>
+  </body>
+
+</html>

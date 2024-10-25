@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:," />
+
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet" />
+    <!-- MDB -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.3.2/mdb.min.css"
+      rel="stylesheet" />
+
+    <title>Agregar | Usiel Colin Pérez</title>
+
+    <script type="module" src="lib/js/submitForm.js"></script>
+    <script type="module" src="lib/js/muestraError.js"></script>
+
+  </head>
+
+  <body class="bg-light">
+
+    <div class="container-fluid">
+      <div class="d-flex align-items-center justify-content-center mt-4">
+        <div class="card text-bg-white mb-3" style="max-width: 30rem;">
+          <div class="card-header bg-info text-white text-center fs-2 fw-bold">
+            Agregar Categoría
+          </div>
+          <div class="card-body">
+            <form
+              onsubmit="submitForm('srv/categoria-agrega.php', event).then(modelo => location.href = 'index.html').catch(muestraError)">
+
+              <div class="form-outline mb-5" data-mdb-input-init>
+                <input class="form-control" name="nombre" autofocus />
+                <label class="form-label">Nombre *</label>
+                <div class="form-helper text-danger"> * Obligatorio </div>
+              </div>
+
+              <div class="form-outline mb-5" data-mdb-input-init>
+                <textarea class="form-control" name="descripcion"
+                  rows="10"></textarea>
+                <label class="form-label">Descripción *</label>
+                <div class="form-helper text-danger"> * Obligatorio </div>
+              </div>
+
+              <label>Estado *</label>
+              <div
+                class="btn-group d-flex align-items-center justify-content-center">
+                <input type="radio" class="btn-check" name="estado"
+                  id="option1" value="Habilitado" />
+                <label class="btn btn-info fw-bold"
+                  for="option1">Habilitado</label>
+
+                <input type="radio" class="btn-check" name="estado"
+                  id="option2" value="Deshabilitado" />
+                <label class="btn btn-info fw-bold"
+                  for="option2">Deshabilitado</label>
+              </div>
+              <label class="text-danger mb-4" style="font-size: .89rem;"> * Obligatorio </label>
+
+              <div class="row">
+                <div class="col">
+                  <a class="btn bg-danger text-white fw-bold"
+                    href="index.html">Cancelar</a>
+                </div>
+                <div class="col text-end">
+                  <button class="btn bg-success text-white fw-bold"
+                    type="submit">Agregar</button>
+                </div>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MDB -->
+    <script type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.3.2/mdb.umd.min.js"></script>
+  </body>
+
+</html>
