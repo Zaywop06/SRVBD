@@ -23,7 +23,7 @@ ejecutaServicio(function () {
         <a href='modifica.html?id=$id'>$nombre</a>
       </dt>
       <dd>
-      <strong>Descripción: </strong>  $descripcion
+        <strong>Descripción: </strong>  $descripcion
       </dd>
       <dd>
         <strong>Estado: </strong>$estado
